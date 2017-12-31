@@ -1,0 +1,113 @@
+fourcc      = "ADIS"
+name        = "ADIS16405 IMU"
+description = "Raw data from the Analog Devices `ADIS16405` 9DOF IMU"
+endianness  = '!'
+
+###############################################################################
+# Fixed size binary data:
+
+# Voltage
+[[member]]
+key = "VCC"
+description = "Bus voltage"
+type = "u16"
+  [member.units]
+    mks = "Volt"
+    scaleby = 0.002418
+
+###############################################################################
+# Rate gryoscope (X,Y,Z)
+[[member]]
+key = "Gyro_X"
+description = "**X axis** value from rate-gyroscope"
+type = "i16"
+  [member.units]
+    mks = "deg/s"
+    scaleby = 0.05
+
+[[member]]
+key = "Gyro_Y"
+description = "**Y axis** value from rate-gyroscope"
+type = "i16"
+  [member.units]
+    mks = "deg/s"
+    scaleby = 0.05
+
+[[member]]
+key = "Gyro_Z"
+description = "**Z axis** value from rate-gyroscope"
+type = "i16"
+  [member.units]
+    mks = "deg/s"
+    scaleby = 0.05
+
+###############################################################################
+# Accelerometer (X,Y,Z)
+[[member]]
+key = "Acc_X"
+description = "**X axis** value from accelerometer"
+type = "i16"
+  [member.units]
+    mks = "g"
+    scaleby = 0.00333
+
+[[member]]
+key = "Acc_Y"
+description = "**Y axis** value from accelerometer"
+type = "i16"
+  [member.units]
+    mks = "g"
+    scaleby = 0.00333
+
+[[member]]
+key = "Acc_Z"
+description = "**Z axis** value from accelerometer"
+type = "i16"
+  [member.units]
+    mks = "g"
+    scaleby = 0.00333
+
+###############################################################################
+# Magnetometer (X,Y,Z)
+[[member]]
+key = "Magn_X"
+description = "**X axis** value from magnetometer"
+type = "i16"
+  [member.units]
+    mks = "tesla"
+    scaleby = 5e-8
+
+[[member]]
+key = "Magn_Y"
+description = "**Y axis** value from magnetometer"
+type = "i16"
+  [member.units]
+    mks = "tesla"
+    scaleby = 5e-8
+
+[[member]]
+key = "Magn_Z"
+description = "**Z axis** value from magnetometer"
+type = "i16"
+  [member.units]
+    mks = "tesla"
+    scaleby = 5e-8
+
+###############################################################################
+# Extra stuff
+[[member]]
+key = "Temp"
+description = "Unit temperature"
+type = "i16"
+  [member.units]
+    mks = "°C"
+    scaleby = 0.14
+    bias = 25.0
+
+[[member]]
+key = "Aux_ADC"
+description = "Aux ADC value"
+type = "i16"
+  [member.units]
+    mks = "volt"
+    scaleby = 806.0

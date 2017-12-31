@@ -1,0 +1,15 @@
+[package]
+name = "psas-telemetry"
+version = "0.1.0"
+authors = ["Nathan Bergey <nathan.bergey@gmail.com>"]
+description = "Rust modules to read, write, and manuplate binary telemetry data messages in the PSAS rocket framework."
+build = "build.rs"
+publish = false  # For now
+
+[dependencies]
+
+[build-dependencies]
+glob = "0.2.11"
+toml = "0.4.5"
+tera = "0.10.10"
+lazy_static = "1.0.0"
