@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `ADIS_raw` struct in crate `psas_telemetry`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, ADIS_raw">
+
+    <title>psas_telemetry::messages::adis::ADIS_raw - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct ADIS_raw</p><div class="block items"><ul><li><a href="#fields">Fields</a></li></ul></div><p class='location'><a href='../../index.html'>psas_telemetry</a>::<wbr><a href='../index.html'>messages</a>::<wbr><a href='index.html'>adis</a></p><script>window.sidebarCurrent = {name: 'ADIS_raw', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>psas_telemetry</a>::<wbr><a href='../index.html'>messages</a>::<wbr><a href='index.html'>adis</a>::<wbr><a class="struct" href=''>ADIS_raw</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../src/psas_telemetry/messages/adis.rs.html#6-42' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct ADIS_raw {
+    pub vcc: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+    pub gyro_x: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a>,
+    pub gyro_y: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a>,
+    pub gyro_z: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a>,
+    pub acc_x: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a>,
+    pub acc_y: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a>,
+    pub acc_z: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a>,
+    pub magn_x: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a>,
+    pub magn_y: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a>,
+    pub magn_z: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a>,
+    pub temp: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a>,
+    pub aux_adc: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a>,
+}</pre><div class='docblock'><p>Raw data from the Analog Devices <code>ADIS16405</code> 9DOF IMU</p>
+</div><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.vcc" class="structfield small-section-header">
+                           <a href="#structfield.vcc" class="anchor field"></a>
+                           <span id="vcc.v" class='invisible'>
+                           <code>vcc: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><div class='docblock'><p>Bus voltage</p>
+</div><span id="structfield.gyro_x" class="structfield small-section-header">
+                           <a href="#structfield.gyro_x" class="anchor field"></a>
+                           <span id="gyro_x.v" class='invisible'>
+                           <code>gyro_x: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a></code>
+                           </span></span><div class='docblock'><p><strong>X axis</strong> value from rate-gyroscope</p>
+</div><span id="structfield.gyro_y" class="structfield small-section-header">
+                           <a href="#structfield.gyro_y" class="anchor field"></a>
+                           <span id="gyro_y.v" class='invisible'>
+                           <code>gyro_y: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a></code>
+                           </span></span><div class='docblock'><p><strong>Y axis</strong> value from rate-gyroscope</p>
+</div><span id="structfield.gyro_z" class="structfield small-section-header">
+                           <a href="#structfield.gyro_z" class="anchor field"></a>
+                           <span id="gyro_z.v" class='invisible'>
+                           <code>gyro_z: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a></code>
+                           </span></span><div class='docblock'><p><strong>Z axis</strong> value from rate-gyroscope</p>
+</div><span id="structfield.acc_x" class="structfield small-section-header">
+                           <a href="#structfield.acc_x" class="anchor field"></a>
+                           <span id="acc_x.v" class='invisible'>
+                           <code>acc_x: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a></code>
+                           </span></span><div class='docblock'><p><strong>X axis</strong> value from accelerometer</p>
+</div><span id="structfield.acc_y" class="structfield small-section-header">
+                           <a href="#structfield.acc_y" class="anchor field"></a>
+                           <span id="acc_y.v" class='invisible'>
+                           <code>acc_y: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a></code>
+                           </span></span><div class='docblock'><p><strong>Y axis</strong> value from accelerometer</p>
+</div><span id="structfield.acc_z" class="structfield small-section-header">
+                           <a href="#structfield.acc_z" class="anchor field"></a>
+                           <span id="acc_z.v" class='invisible'>
+                           <code>acc_z: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a></code>
+                           </span></span><div class='docblock'><p><strong>Z axis</strong> value from accelerometer</p>
+</div><span id="structfield.magn_x" class="structfield small-section-header">
+                           <a href="#structfield.magn_x" class="anchor field"></a>
+                           <span id="magn_x.v" class='invisible'>
+                           <code>magn_x: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a></code>
+                           </span></span><div class='docblock'><p><strong>X axis</strong> value from magnetometer</p>
+</div><span id="structfield.magn_y" class="structfield small-section-header">
+                           <a href="#structfield.magn_y" class="anchor field"></a>
+                           <span id="magn_y.v" class='invisible'>
+                           <code>magn_y: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a></code>
+                           </span></span><div class='docblock'><p><strong>Y axis</strong> value from magnetometer</p>
+</div><span id="structfield.magn_z" class="structfield small-section-header">
+                           <a href="#structfield.magn_z" class="anchor field"></a>
+                           <span id="magn_z.v" class='invisible'>
+                           <code>magn_z: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a></code>
+                           </span></span><div class='docblock'><p><strong>Z axis</strong> value from magnetometer</p>
+</div><span id="structfield.temp" class="structfield small-section-header">
+                           <a href="#structfield.temp" class="anchor field"></a>
+                           <span id="temp.v" class='invisible'>
+                           <code>temp: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a></code>
+                           </span></span><div class='docblock'><p>Unit temperature</p>
+</div><span id="structfield.aux_adc" class="structfield small-section-header">
+                           <a href="#structfield.aux_adc" class="anchor field"></a>
+                           <span id="aux_adc.v" class='invisible'>
+                           <code>aux_adc: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i16.html">i16</a></code>
+                           </span></span><div class='docblock'><p>Aux ADC value</p>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "psas_telemetry";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>
