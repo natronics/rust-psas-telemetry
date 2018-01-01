@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["messages",""]]});
+initSidebarItems({"fn":[["get_stats","Return a collection of statistics about a log file"]],"mod":[["messages",""]],"struct":[["Stats","Statistics about a set of telemetry messages"]]});
