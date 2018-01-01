@@ -3,6 +3,7 @@
 Module for the {{ name }} telemetry messages.
 */
 use std::io::Cursor;
+#[allow(unused_imports)]
 use byteorder::{ReadBytesExt, BigEndian};
 use std::collections::HashMap;
 
