@@ -6,7 +6,10 @@ description = "Rust modules to read, write, and manuplate binary telemetry data 
 build = "build.rs"
 publish = false  # For now
 
+
 [dependencies]
+byteorder = "1.2.1"
+
 
 [build-dependencies]
 glob = "0.2.11"
