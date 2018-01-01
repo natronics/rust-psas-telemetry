@@ -1,0 +1,68 @@
+fourcc      = "RNHP"
+name        = "Rocket Net Hub Power"
+description = "Power stats from the RNH"
+endianness  = '!'
+
+[[member]]
+key = "Port1"
+description = "Port 1 power"
+type = "u16"
+  [member.units]
+    mks = "Amp"
+    scaleby = 0.000727175299964
+
+[[member]]
+key = "Port2"
+description = "Port 2 power"
+type = "u16"
+  [member.units]
+    mks = "Amp"
+    scaleby = 0.000727175299964
+
+[[member]]
+key = "Port3"
+description = "Port 3 power"
+type = "u16"
+  [member.units]
+    mks = "Amp"
+    scaleby = 0.000727175299964
+
+[[member]]
+key = "Port4"
+description = "Port 4 power"
+type = "u16"
+  [member.units]
+    mks = "Amp"
+    scaleby = 0.000727175299964
+
+[[member]]
+key = "Umbilical"
+description = "Umbilical power, power entering the rocket from shore power"
+type = "u16"
+  [member.units]
+    mks = "Amp"
+    scaleby = 0.0008056640625
+
+[[member]]
+key = "Port6"
+description = "Port 6 power"
+type = "u16"
+  [member.units]
+    mks = "Amp"
+    scaleby = 0.000727175299964
+
+[[member]]
+key = "Port7"
+description = "Port 7 power"
+type = "u16"
+  [member.units]
+    mks = "Amp"
+    scaleby = 0.000727175299964
+
+[[member]]
+key = "Port8"
+description = "Port 8 power"
+type = "u16"
+  [member.units]
+    mks = "Amp"
+    scaleby = 0.000727175299964

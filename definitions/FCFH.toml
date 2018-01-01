@@ -1,0 +1,227 @@
+###############################################################################
+# Flight Computer Framework (Main flight computer software) Health/Heartbeat
+###############################################################################
+fourcc      = "FCFH"
+name        = "FC Health"
+description = "Main flight computer software health"
+endianness  = '!'
+
+
+###############################################################################
+# CPU
+
+# CPU (user)
+[[member]]
+key = "CPU_User"
+description = "CPU use in user space"
+type = "f32"
+  [member.units]
+    mks = "%"
+
+# CPU (system)
+[[member]]
+key = "CPU_System"
+description = "CPU use in kernel space"
+type = "f32"
+  [member.units]
+    mks = "%"
+
+# CPU (nice)
+[[member]]
+key = "CPU_Nice"
+description = "CPU use in running users' processes that have been 'niced'"
+type = "f32"
+  [member.units]
+    mks = "%"
+
+# CPU (iowait)
+[[member]]
+key = "CPU_IOWait"
+description = "CPU use spent waiting for I/O to complete"
+type = "f32"
+  [member.units]
+    mks = "%"
+
+# CPU (IRQ)
+[[member]]
+key = "CPU_IRQ"
+description = "CPU use spent for servicing hardware interrupts"
+type = "f32"
+  [member.units]
+    mks = "%"
+
+# CPU (soft IRQ)
+[[member]]
+key = "CPU_SoftIRQ"
+description = "CPU use spent for servicing software interrupts"
+type = "f32"
+  [member.units]
+    mks = "%"
+
+
+###############################################################################
+# RAM
+
+# RAM (used)
+[[member]]
+key = "RAM_Used"
+description = "Ram currently in use"
+type = "u64"
+  [member.units]
+    mks = "Bytes"
+
+# RAM (buffered)
+[[member]]
+key = "RAM_Buffer"
+description = "Ram currently in use, cache for things like file system metadata"
+type = "u64"
+  [member.units]
+    mks = "Bytes"
+
+# RAM (cached)
+[[member]]
+key = "RAM_Cached"
+description = "Ram currently in use, cache for various things"
+type = "u64"
+  [member.units]
+    mks = "Bytes"
+
+###############################################################################
+# PID
+[[member]]
+key = "PID"
+description = "Number of PIDs currently running"
+type = "u16"
+  [member.units]
+    mks = "#"
+
+###############################################################################
+# Disk
+
+# Disk (used)
+[[member]]
+key = "Disk_Used"
+description = "Amount of disk space currently used"
+type = "u64"
+  [member.units]
+    mks = "Bytes"
+
+# Disk (buffered)
+[[member]]
+key = "Disk_Buffer"
+description = "Amount of disk space currently buffered"
+type = "u64"
+  [member.units]
+    mks = "Bytes"
+
+# Disk (cached)
+[[member]]
+key = "Disk_Cached"
+description = "Amount of disk space currently cached"
+type = "u64"
+  [member.units]
+    mks = "Bytes"
+
+###############################################################################
+# Network
+
+# Network local bytes:
+[[member]]
+key = "IO_lo_Bytes_Sent"
+description = "Bytes sent on the loopback interface (localhost)"
+type = "u32"
+  [member.units]
+    mks = "Bytes"
+
+[[member]]
+key = "IO_lo_Bytes_Recv"
+description = "Bytes recieved on the loopback interface (localhost)"
+type = "u32"
+  [member.units]
+    mks = "Bytes"
+
+# Network local packets:
+[[member]]
+key = "IO_lo_Packets_Sent"
+description = "Packets sent on the loopback interface (localhost)"
+type = "u32"
+  [member.units]
+    mks = "#"
+
+[[member]]
+key = "IO_lo_Packets_Recv"
+description = "Packets recieved on the loopback interface (localhost)"
+type = "u32"
+  [member.units]
+    mks = "#"
+
+# ETH0
+# Network eth0 bytes:
+[[member]]
+key = "IO_eth0_Bytes_Sent"
+description = "Bytes sent on the `eth0` interface"
+type = "u32"
+  [member.units]
+    mks = "Bytes"
+
+[[member]]
+key = "IO_eth0_Bytes_Recv"
+description = "Bytes recieved on the `eth0` interface"
+type = "u32"
+  [member.units]
+    mks = "Bytes"
+
+# Network eth0 packets:
+[[member]]
+key = "IO_eth0_Packets_Sent"
+description = "Packets sent on the `eth0` interface"
+type = "u32"
+  [member.units]
+    mks = "#"
+
+[[member]]
+key = "IO_eth0_Packets_Recv"
+description = "Packets recieved on the `eth0` interface"
+type = "u32"
+  [member.units]
+    mks = "#"
+
+# WLAN0
+# Network wlan0 bytes:
+[[member]]
+key = "IO_wlan0_Bytes_Sent"
+description = "Bytes sent on the `wlan0` interface"
+type = "u32"
+  [member.units]
+    mks = "Bytes"
+
+[[member]]
+key = "IO_wlan0_Bytes_Recv"
+description = "Bytes recieved on the `wlan0` interface"
+type = "u32"
+  [member.units]
+    mks = "Bytes"
+
+# Network eth0 packets:
+[[member]]
+key = "IO_wlan0_Packets_Sent"
+description = "Packets sent on the `wlan0` interface"
+type = "u32"
+  [member.units]
+    mks = "#"
+
+[[member]]
+key = "IO_wlan0_Packets_Recv"
+description = "Packets recieved on the `wlan0` interface"
+type = "u32"
+  [member.units]
+    mks = "#"
+
+###############################################################################
+# Temperature
+[[member]]
+key = "Core_Temp"
+description = "Temperature of the processor"
+type = "u16"
+  [member.units]
+    mks = "°C"

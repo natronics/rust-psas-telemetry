@@ -1,0 +1,21 @@
+fourcc      = "ROLL"
+name        = "Roll Servo Commands"
+description = "Commands sent to the Roll server from the flight comptuer"
+endianness  = '!'
+
+
+###############################################################################
+# Fixed size binary data:
+[[member]]
+key = "Angle"
+description = "Expected commanded angle"
+type = "f64"
+  [member.units]
+    mks = "angle"
+
+[[member]]
+key = "Disable"
+description = "Disable flag"
+type = "u8"
+  [member.units]
+    mks = ""

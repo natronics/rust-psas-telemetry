@@ -1,0 +1,133 @@
+###############################################################################
+# Rocket Net Hub hardware Health/Heartbeat
+###############################################################################
+fourcc      = "RNHH"
+name        = "RNH Health"
+description = "Rocket Net Hub hardware Health"
+endianness  = '!'
+
+
+###############################################################################
+# Temperature
+
+# Board
+[[member]]
+key = "Temperature"
+description = "Temperature of the main PCB"
+type = "u16"
+  [member.units]
+    mks = "Kelvin"
+    scaleby = 0.1
+
+# Sense 1
+[[member]]
+key = "TS1Temperature"
+description = "Temperature of battery sensor 1"
+type = "i16"
+  [member.units]
+    mks = "°C"
+    scaleby = 0.1
+
+# Sense 2
+[[member]]
+key = "TS2Temperature"
+description = "Temperature of battery sensor 2"
+type = "i16"
+  [member.units]
+    mks = "°C"
+    scaleby = 0.1
+
+# ??
+[[member]]
+key = "TempRange"
+description = ""
+type = "u16"
+  [member.units]
+    mks = ""
+
+
+###############################################################################
+# Power
+
+# Main Volts
+[[member]]
+key = "Voltage"
+description = "System voltage"
+type = "u16"
+  [member.units]
+    mks = "Volts"
+    scaleby = 0.001
+
+# Main Current
+[[member]]
+key = "Current"
+description = "System current"
+type = "i16"
+  [member.units]
+    mks = "Amps"
+    scaleby = 0.001
+
+[[member]]
+key = "AverageCurrent"
+description = "System current (average)"
+type = "i16"
+  [member.units]
+    mks = "Amps"
+    scaleby = 0.001
+
+###############################################################################
+# Batter Pack
+
+# Cell 1
+[[member]]
+key = "CellVoltage1"
+description = "Battery cell #1 volts"
+type = "u16"
+  [member.units]
+    mks = "Volt"
+    scaleby = 0.001
+
+# Cell 2
+[[member]]
+key = "CellVoltage2"
+description = "Battery cell #2 volts"
+type = "u16"
+  [member.units]
+    mks = "Volt"
+    scaleby = 0.001
+
+# Cell 3
+[[member]]
+key = "CellVoltage3"
+description = "Battery cell #3 volts"
+type = "u16"
+  [member.units]
+    mks = "Volt"
+    scaleby = 0.001
+
+# Cell 4
+[[member]]
+key = "CellVoltage4"
+description = "Battery cell #4 volts"
+type = "u16"
+  [member.units]
+    mks = "Volt"
+    scaleby = 0.001
+
+# Cell Pack voltage
+[[member]]
+key = "PackVoltage"
+description = "Battery pack voltage"
+type = "u16"
+  [member.units]
+    mks = "Volt"
+    scaleby = 0.001
+
+# Cell Pack average voltage
+[[member]]
+key = "AverageVoltage"
+description = "Battery pack voltage (average)"
+type = "u16"
+  [member.units]
+    mks = "Volt"
+    scaleby = 0.001

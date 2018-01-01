@@ -1,0 +1,28 @@
+fourcc      = "SEQE"
+name        = "Sequence Number Error"
+description = "Error message from the flight computer if it receives and out-of-order packet"
+endianness  = '!'
+
+###############################################################################
+# Fixed size binary data:
+
+[[member]]
+key = "Port"
+description = "Which port the packet was recieved on"
+type = "u16"
+  [member.units]
+    mks = ""
+
+[[member]]
+key = "Expected"
+description = "Expected sequence number"
+type = "u32"
+  [member.units]
+    mks = ""
+
+[[member]]
+key = "Received"
+description = "Actual sequence number recieved"
+type = "u32"
+  [member.units]
+    mks = ""

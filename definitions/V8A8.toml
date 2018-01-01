@@ -1,0 +1,161 @@
+fourcc      = "V8A8"
+name        = "Venus8 Navigation Message"
+description = "Venus8 Navigation Message"
+endianness  = '!'
+
+###############################################################################
+# Fixed size binary data:
+
+
+###############################################################################
+# Fix Data:
+[[member]]
+key = "Fix_Mode"
+description = "Mode of the fix (none, 2D, 3D, etc.)"
+type = "u8"
+  [member.units]
+    mks = ""
+
+[[member]]
+key = "Num_SV"
+description = "Number of currently sats locked"
+type = "u8"
+  [member.units]
+    mks = "#"
+
+###############################################################################
+# Time:
+[[member]]
+key = "GPS_Week"
+description = "GPS week number"
+type = "u16"
+  [member.units]
+    mks = ""
+
+[[member]]
+key = "TOW"
+description = "GPS Time of week"
+type = "u32"
+  [member.units]
+    mks = "s"
+    scaleby = 1e-2
+
+###############################################################################
+# Geocentric location:
+[[member]]
+key = "Latitude"
+description = "WGS84 Latitude"
+type = "i32"
+  [member.units]
+    mks = "°"
+    scaleby = 1e-7
+
+[[member]]
+key = "Longitude"
+description = "WGS84 Longitude"
+type = "i32"
+  [member.units]
+    mks = "°"
+    scaleby = 1e-7
+
+[[member]]
+key = "Ellipsoid_Altitude"
+description = "Altiutude above the WGS84 ellipsoid"
+type = "u32"
+  [member.units]
+    mks = "m"
+    scaleby = 1e-2
+
+[[member]]
+key = "MSL_Altitude"
+description = "Altiutude above WGS84 Mean Sea Level"
+type = "u32"
+  [member.units]
+    mks = "m"
+    scaleby = 1e-2
+
+###############################################################################
+# Dilution of Precision:
+[[member]]
+key = "GDOP"
+description = "GDOP"
+type = "u16"
+  [member.units]
+    mks = ""
+    scaleby = 1e-2
+
+[[member]]
+key = "PDOP"
+description = "PDOP"
+type = "u16"
+  [member.units]
+    mks = ""
+    scaleby = 1e-2
+
+[[member]]
+key = "HDOP"
+description = "HDOP"
+type = "u16"
+  [member.units]
+    mks = ""
+    scaleby = 1e-2
+
+[[member]]
+key = "TDOP"
+description = "TDOP"
+type = "u16"
+  [member.units]
+    mks = ""
+    scaleby = 1e-2
+
+###############################################################################
+# ECEF Position:
+[[member]]
+key = "ECEF_X"
+description = "ECEF X Position"
+type = "i32"
+  [member.units]
+    mks = "m"
+    scaleby = 1e-2
+
+[[member]]
+key = "ECEF_Y"
+description = "ECEF Y Position"
+type = "i32"
+  [member.units]
+    mks = "m"
+    scaleby = 1e-2
+
+[[member]]
+key = "ECEF_Z"
+description = "ECEF Z Position"
+type = "i32"
+  [member.units]
+    mks = "m"
+    scaleby = 1e-2
+
+###############################################################################
+# ECEF Velocity:
+[[member]]
+key = "ECEF_VX"
+description = "ECEF X Velocity"
+type = "i32"
+  [member.units]
+    mks = "m/s"
+    scaleby = 1e-2
+
+[[member]]
+key = "ECEF_VY"
+description = "ECEF Y Velocity"
+type = "i32"
+  [member.units]
+    mks = "m/s"
+    scaleby = 1e-2
+
+[[member]]
+key = "ECEF_VZ"
+description = "ECEF Z Velocity"
+type = "i32"
+  [member.units]
+    mks = "m/s"
+    scaleby = 1e-2

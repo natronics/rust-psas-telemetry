@@ -1,0 +1,15 @@
+fourcc      = "RNHU"
+name        = "Umbilical Detect"
+description = "Triggered when the Umbilical disconnect signal changes"
+endianness  = '!'
+
+###############################################################################
+# Fixed size binary data:
+
+# Voltage
+[[member]]
+key = "Detect"
+description = "Dectect state change"
+type = "u8"
+  [member.units]
+    mks = ""

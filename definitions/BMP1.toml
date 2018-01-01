@@ -1,0 +1,21 @@
+fourcc      = "BMP1"
+name        = "BMP180 Pressure sensor"
+description = "Raw data from BMP180"
+endianness  = '!'
+
+###############################################################################
+# Fixed size binary data:
+
+[[member]]
+key = "Pressure"
+description = "Pressure data"
+type = "u32"
+  [member.units]
+    mks = ""
+
+[[member]]
+key = "Temperature"
+description = "Temperature data"
+type = "u16"
+  [member.units]
+    mks = ""
