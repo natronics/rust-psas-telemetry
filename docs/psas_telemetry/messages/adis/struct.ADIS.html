@@ -29,7 +29,7 @@
 
     <nav class="sidebar">
         
-        <p class='location'>Struct ADIS</p><div class="block items"><ul><li><a href="#fields">Fields</a></li></ul></div><p class='location'><a href='../../index.html'>psas_telemetry</a>::<wbr><a href='../index.html'>messages</a>::<wbr><a href='index.html'>adis</a></p><script>window.sidebarCurrent = {name: 'ADIS', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Struct ADIS</p><div class="block items"><ul><li><a href="#fields">Fields</a></li><li><a href="#methods">Methods</a></li></ul></div><p class='location'><a href='../../index.html'>psas_telemetry</a>::<wbr><a href='../index.html'>messages</a>::<wbr><a href='index.html'>adis</a></p><script>window.sidebarCurrent = {name: 'ADIS', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
     </nav>
 
     <nav class="sub">
@@ -48,7 +48,7 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a class='srclink' href='../../../src/psas_telemetry/messages/adis.rs.html#47-72' title='goto source code'>[src]</a></span></h1>
+               </span><a class='srclink' href='../../../src/psas_telemetry/messages/adis.rs.html#52-77' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'>pub struct ADIS {
     pub vcc: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
     pub gyro_x: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
@@ -124,7 +124,20 @@
                            <span id="aux_adc.v" class='invisible'>
                            <code>aux_adc: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
                            </span></span><div class='docblock'><p>Aux ADC value [volt]</p>
-</div></section>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../../../psas_telemetry/messages/adis/struct.ADIS.html" title="struct psas_telemetry::messages::adis::ADIS">ADIS</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/psas_telemetry/messages/adis.rs.html#80-141' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from_raw' class="method"><span id='from_raw.v' class='invisible'><code>pub fn <a href='#method.from_raw' class='fnname'>from_raw</a>(raw: <a class="struct" href="../../../psas_telemetry/messages/adis/struct.ADIS_raw.html" title="struct psas_telemetry::messages::adis::ADIS_raw">ADIS_raw</a>) -&gt; <a class="struct" href="../../../psas_telemetry/messages/adis/struct.ADIS.html" title="struct psas_telemetry::messages::adis::ADIS">ADIS</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/psas_telemetry/messages/adis.rs.html#83-98' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Convert a ADIS_raw struct to a converted units struct by applying scaleing</p>
+</div><h4 id='method.to_csv_line' class="method"><span id='to_csv_line.v' class='invisible'><code>pub fn <a href='#method.to_csv_line' class='fnname'>to_csv_line</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/psas_telemetry/messages/adis.rs.html#102-119' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Convert values to a single line suitable for a CSV file
+(ex: &quot;12.0,-15.2,1352.8123,&quot;)</p>
+</div><h4 id='method.to_dict' class="method"><span id='to_dict.v' class='invisible'><code>pub fn <a href='#method.to_dict' class='fnname'>to_dict</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/std/collections/hash/map/struct.HashMap.html" title="struct std::collections::hash::map::HashMap">HashMap</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/psas_telemetry/messages/adis.rs.html#123-140' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>convert values to a dictionary where the key is a string
+(ex: {&#39;value_1&#39;: 12.0, &#39;value_2&#39;: -15.2})</p>
+</div></div></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `RNHH` struct in crate `psas_telemetry`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, RNHH">
+
+    <title>psas_telemetry::messages::rnhh::RNHH - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct RNHH</p><div class="block items"><ul><li><a href="#fields">Fields</a></li><li><a href="#methods">Methods</a></li></ul></div><p class='location'><a href='../../index.html'>psas_telemetry</a>::<wbr><a href='../index.html'>messages</a>::<wbr><a href='index.html'>rnhh</a></p><script>window.sidebarCurrent = {name: 'RNHH', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>psas_telemetry</a>::<wbr><a href='../index.html'>messages</a>::<wbr><a href='index.html'>rnhh</a>::<wbr><a class="struct" href=''>RNHH</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../src/psas_telemetry/messages/rnhh.rs.html#55-82' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct RNHH {
+    pub temperature: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub ts1temperature: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub ts2temperature: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub temprange: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub voltage: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub current: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub averagecurrent: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub cellvoltage1: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub cellvoltage2: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub cellvoltage3: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub cellvoltage4: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub packvoltage: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub averagevoltage: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+}</pre><div class='docblock'><p>Rocket Net Hub hardware Health</p>
+</div><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.temperature" class="structfield small-section-header">
+                           <a href="#structfield.temperature" class="anchor field"></a>
+                           <span id="temperature.v" class='invisible'>
+                           <code>temperature: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>Temperature of the main PCB [Kelvin]</p>
+</div><span id="structfield.ts1temperature" class="structfield small-section-header">
+                           <a href="#structfield.ts1temperature" class="anchor field"></a>
+                           <span id="ts1temperature.v" class='invisible'>
+                           <code>ts1temperature: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>Temperature of battery sensor 1 [°C]</p>
+</div><span id="structfield.ts2temperature" class="structfield small-section-header">
+                           <a href="#structfield.ts2temperature" class="anchor field"></a>
+                           <span id="ts2temperature.v" class='invisible'>
+                           <code>ts2temperature: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>Temperature of battery sensor 2 [°C]</p>
+</div><span id="structfield.temprange" class="structfield small-section-header">
+                           <a href="#structfield.temprange" class="anchor field"></a>
+                           <span id="temprange.v" class='invisible'>
+                           <code>temprange: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>[]</p>
+</div><span id="structfield.voltage" class="structfield small-section-header">
+                           <a href="#structfield.voltage" class="anchor field"></a>
+                           <span id="voltage.v" class='invisible'>
+                           <code>voltage: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>System voltage [Volts]</p>
+</div><span id="structfield.current" class="structfield small-section-header">
+                           <a href="#structfield.current" class="anchor field"></a>
+                           <span id="current.v" class='invisible'>
+                           <code>current: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>System current [Amps]</p>
+</div><span id="structfield.averagecurrent" class="structfield small-section-header">
+                           <a href="#structfield.averagecurrent" class="anchor field"></a>
+                           <span id="averagecurrent.v" class='invisible'>
+                           <code>averagecurrent: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>System current (average) [Amps]</p>
+</div><span id="structfield.cellvoltage1" class="structfield small-section-header">
+                           <a href="#structfield.cellvoltage1" class="anchor field"></a>
+                           <span id="cellvoltage1.v" class='invisible'>
+                           <code>cellvoltage1: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>Battery cell #1 volts [Volt]</p>
+</div><span id="structfield.cellvoltage2" class="structfield small-section-header">
+                           <a href="#structfield.cellvoltage2" class="anchor field"></a>
+                           <span id="cellvoltage2.v" class='invisible'>
+                           <code>cellvoltage2: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>Battery cell #2 volts [Volt]</p>
+</div><span id="structfield.cellvoltage3" class="structfield small-section-header">
+                           <a href="#structfield.cellvoltage3" class="anchor field"></a>
+                           <span id="cellvoltage3.v" class='invisible'>
+                           <code>cellvoltage3: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>Battery cell #3 volts [Volt]</p>
+</div><span id="structfield.cellvoltage4" class="structfield small-section-header">
+                           <a href="#structfield.cellvoltage4" class="anchor field"></a>
+                           <span id="cellvoltage4.v" class='invisible'>
+                           <code>cellvoltage4: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>Battery cell #4 volts [Volt]</p>
+</div><span id="structfield.packvoltage" class="structfield small-section-header">
+                           <a href="#structfield.packvoltage" class="anchor field"></a>
+                           <span id="packvoltage.v" class='invisible'>
+                           <code>packvoltage: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>Battery pack voltage [Volt]</p>
+</div><span id="structfield.averagevoltage" class="structfield small-section-header">
+                           <a href="#structfield.averagevoltage" class="anchor field"></a>
+                           <span id="averagevoltage.v" class='invisible'>
+                           <code>averagevoltage: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>Battery pack voltage (average) [Volt]</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../../../psas_telemetry/messages/rnhh/struct.RNHH.html" title="struct psas_telemetry::messages::rnhh::RNHH">RNHH</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/psas_telemetry/messages/rnhh.rs.html#85-149' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from_raw' class="method"><span id='from_raw.v' class='invisible'><code>pub fn <a href='#method.from_raw' class='fnname'>from_raw</a>(raw: <a class="struct" href="../../../psas_telemetry/messages/rnhh/struct.RNHH_raw.html" title="struct psas_telemetry::messages::rnhh::RNHH_raw">RNHH_raw</a>) -&gt; <a class="struct" href="../../../psas_telemetry/messages/rnhh/struct.RNHH.html" title="struct psas_telemetry::messages::rnhh::RNHH">RNHH</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/psas_telemetry/messages/rnhh.rs.html#88-104' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Convert a RNHH_raw struct to a converted units struct by applying scaleing</p>
+</div><h4 id='method.to_csv_line' class="method"><span id='to_csv_line.v' class='invisible'><code>pub fn <a href='#method.to_csv_line' class='fnname'>to_csv_line</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/psas_telemetry/messages/rnhh.rs.html#108-126' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Convert values to a single line suitable for a CSV file
+(ex: &quot;12.0,-15.2,1352.8123,&quot;)</p>
+</div><h4 id='method.to_dict' class="method"><span id='to_dict.v' class='invisible'><code>pub fn <a href='#method.to_dict' class='fnname'>to_dict</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/std/collections/hash/map/struct.HashMap.html" title="struct std::collections::hash::map::HashMap">HashMap</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/psas_telemetry/messages/rnhh.rs.html#130-148' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>convert values to a dictionary where the key is a string
+(ex: {&#39;value_1&#39;: 12.0, &#39;value_2&#39;: -15.2})</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "psas_telemetry";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

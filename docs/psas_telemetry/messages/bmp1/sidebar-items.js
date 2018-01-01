@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["read_raw","Read the body and return unpacked struct of raw values"]],"struct":[["BMP1","Raw data from BMP180"],["BMP1_raw","Raw data from BMP180"]]});

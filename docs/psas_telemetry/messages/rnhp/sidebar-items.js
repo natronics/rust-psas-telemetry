@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["read_raw","Read the body and return unpacked struct of raw values"]],"struct":[["RNHP","Power stats from the RNH"],["RNHP_raw","Power stats from the RNH"]]});

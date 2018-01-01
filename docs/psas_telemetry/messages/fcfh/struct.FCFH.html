@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `FCFH` struct in crate `psas_telemetry`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, FCFH">
+
+    <title>psas_telemetry::messages::fcfh::FCFH - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct FCFH</p><div class="block items"><ul><li><a href="#fields">Fields</a></li><li><a href="#methods">Methods</a></li></ul></div><p class='location'><a href='../../index.html'>psas_telemetry</a>::<wbr><a href='../index.html'>messages</a>::<wbr><a href='index.html'>fcfh</a></p><script>window.sidebarCurrent = {name: 'FCFH', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>psas_telemetry</a>::<wbr><a href='../index.html'>messages</a>::<wbr><a href='index.html'>fcfh</a>::<wbr><a class="struct" href=''>FCFH</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../src/psas_telemetry/messages/fcfh.rs.html#94-147' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct FCFH {
+    pub cpu_user: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub cpu_system: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub cpu_nice: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub cpu_iowait: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub cpu_irq: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub cpu_softirq: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub ram_used: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub ram_buffer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub ram_cached: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub pid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub disk_used: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub disk_buffer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub disk_cached: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub io_lo_bytes_sent: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub io_lo_bytes_recv: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub io_lo_packets_sent: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub io_lo_packets_recv: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub io_eth0_bytes_sent: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub io_eth0_bytes_recv: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub io_eth0_packets_sent: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub io_eth0_packets_recv: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub io_wlan0_bytes_sent: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub io_wlan0_bytes_recv: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub io_wlan0_packets_sent: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub io_wlan0_packets_recv: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+    pub core_temp: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>,
+}</pre><div class='docblock'><p>Main flight computer software health</p>
+</div><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.cpu_user" class="structfield small-section-header">
+                           <a href="#structfield.cpu_user" class="anchor field"></a>
+                           <span id="cpu_user.v" class='invisible'>
+                           <code>cpu_user: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>CPU use in user space [%]</p>
+</div><span id="structfield.cpu_system" class="structfield small-section-header">
+                           <a href="#structfield.cpu_system" class="anchor field"></a>
+                           <span id="cpu_system.v" class='invisible'>
+                           <code>cpu_system: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>CPU use in kernel space [%]</p>
+</div><span id="structfield.cpu_nice" class="structfield small-section-header">
+                           <a href="#structfield.cpu_nice" class="anchor field"></a>
+                           <span id="cpu_nice.v" class='invisible'>
+                           <code>cpu_nice: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>CPU use in running users&#39; processes that have been &#39;niced&#39; [%]</p>
+</div><span id="structfield.cpu_iowait" class="structfield small-section-header">
+                           <a href="#structfield.cpu_iowait" class="anchor field"></a>
+                           <span id="cpu_iowait.v" class='invisible'>
+                           <code>cpu_iowait: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>CPU use spent waiting for I/O to complete [%]</p>
+</div><span id="structfield.cpu_irq" class="structfield small-section-header">
+                           <a href="#structfield.cpu_irq" class="anchor field"></a>
+                           <span id="cpu_irq.v" class='invisible'>
+                           <code>cpu_irq: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>CPU use spent for servicing hardware interrupts [%]</p>
+</div><span id="structfield.cpu_softirq" class="structfield small-section-header">
+                           <a href="#structfield.cpu_softirq" class="anchor field"></a>
+                           <span id="cpu_softirq.v" class='invisible'>
+                           <code>cpu_softirq: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>CPU use spent for servicing software interrupts [%]</p>
+</div><span id="structfield.ram_used" class="structfield small-section-header">
+                           <a href="#structfield.ram_used" class="anchor field"></a>
+                           <span id="ram_used.v" class='invisible'>
+                           <code>ram_used: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>Ram currently in use [Bytes]</p>
+</div><span id="structfield.ram_buffer" class="structfield small-section-header">
+                           <a href="#structfield.ram_buffer" class="anchor field"></a>
+                           <span id="ram_buffer.v" class='invisible'>
+                           <code>ram_buffer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>Ram currently in use, cache for things like file system metadata [Bytes]</p>
+</div><span id="structfield.ram_cached" class="structfield small-section-header">
+                           <a href="#structfield.ram_cached" class="anchor field"></a>
+                           <span id="ram_cached.v" class='invisible'>
+                           <code>ram_cached: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>Ram currently in use, cache for various things [Bytes]</p>
+</div><span id="structfield.pid" class="structfield small-section-header">
+                           <a href="#structfield.pid" class="anchor field"></a>
+                           <span id="pid.v" class='invisible'>
+                           <code>pid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>Number of PIDs currently running [#]</p>
+</div><span id="structfield.disk_used" class="structfield small-section-header">
+                           <a href="#structfield.disk_used" class="anchor field"></a>
+                           <span id="disk_used.v" class='invisible'>
+                           <code>disk_used: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>Amount of disk space currently used [Bytes]</p>
+</div><span id="structfield.disk_buffer" class="structfield small-section-header">
+                           <a href="#structfield.disk_buffer" class="anchor field"></a>
+                           <span id="disk_buffer.v" class='invisible'>
+                           <code>disk_buffer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>Amount of disk space currently buffered [Bytes]</p>
+</div><span id="structfield.disk_cached" class="structfield small-section-header">
+                           <a href="#structfield.disk_cached" class="anchor field"></a>
+                           <span id="disk_cached.v" class='invisible'>
+                           <code>disk_cached: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>Amount of disk space currently cached [Bytes]</p>
+</div><span id="structfield.io_lo_bytes_sent" class="structfield small-section-header">
+                           <a href="#structfield.io_lo_bytes_sent" class="anchor field"></a>
+                           <span id="io_lo_bytes_sent.v" class='invisible'>
+                           <code>io_lo_bytes_sent: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>Bytes sent on the loopback interface (localhost) [Bytes]</p>
+</div><span id="structfield.io_lo_bytes_recv" class="structfield small-section-header">
+                           <a href="#structfield.io_lo_bytes_recv" class="anchor field"></a>
+                           <span id="io_lo_bytes_recv.v" class='invisible'>
+                           <code>io_lo_bytes_recv: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>Bytes recieved on the loopback interface (localhost) [Bytes]</p>
+</div><span id="structfield.io_lo_packets_sent" class="structfield small-section-header">
+                           <a href="#structfield.io_lo_packets_sent" class="anchor field"></a>
+                           <span id="io_lo_packets_sent.v" class='invisible'>
+                           <code>io_lo_packets_sent: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>Packets sent on the loopback interface (localhost) [#]</p>
+</div><span id="structfield.io_lo_packets_recv" class="structfield small-section-header">
+                           <a href="#structfield.io_lo_packets_recv" class="anchor field"></a>
+                           <span id="io_lo_packets_recv.v" class='invisible'>
+                           <code>io_lo_packets_recv: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>Packets recieved on the loopback interface (localhost) [#]</p>
+</div><span id="structfield.io_eth0_bytes_sent" class="structfield small-section-header">
+                           <a href="#structfield.io_eth0_bytes_sent" class="anchor field"></a>
+                           <span id="io_eth0_bytes_sent.v" class='invisible'>
+                           <code>io_eth0_bytes_sent: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>Bytes sent on the <code>eth0</code> interface [Bytes]</p>
+</div><span id="structfield.io_eth0_bytes_recv" class="structfield small-section-header">
+                           <a href="#structfield.io_eth0_bytes_recv" class="anchor field"></a>
+                           <span id="io_eth0_bytes_recv.v" class='invisible'>
+                           <code>io_eth0_bytes_recv: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>Bytes recieved on the <code>eth0</code> interface [Bytes]</p>
+</div><span id="structfield.io_eth0_packets_sent" class="structfield small-section-header">
+                           <a href="#structfield.io_eth0_packets_sent" class="anchor field"></a>
+                           <span id="io_eth0_packets_sent.v" class='invisible'>
+                           <code>io_eth0_packets_sent: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>Packets sent on the <code>eth0</code> interface [#]</p>
+</div><span id="structfield.io_eth0_packets_recv" class="structfield small-section-header">
+                           <a href="#structfield.io_eth0_packets_recv" class="anchor field"></a>
+                           <span id="io_eth0_packets_recv.v" class='invisible'>
+                           <code>io_eth0_packets_recv: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>Packets recieved on the <code>eth0</code> interface [#]</p>
+</div><span id="structfield.io_wlan0_bytes_sent" class="structfield small-section-header">
+                           <a href="#structfield.io_wlan0_bytes_sent" class="anchor field"></a>
+                           <span id="io_wlan0_bytes_sent.v" class='invisible'>
+                           <code>io_wlan0_bytes_sent: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>Bytes sent on the <code>wlan0</code> interface [Bytes]</p>
+</div><span id="structfield.io_wlan0_bytes_recv" class="structfield small-section-header">
+                           <a href="#structfield.io_wlan0_bytes_recv" class="anchor field"></a>
+                           <span id="io_wlan0_bytes_recv.v" class='invisible'>
+                           <code>io_wlan0_bytes_recv: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>Bytes recieved on the <code>wlan0</code> interface [Bytes]</p>
+</div><span id="structfield.io_wlan0_packets_sent" class="structfield small-section-header">
+                           <a href="#structfield.io_wlan0_packets_sent" class="anchor field"></a>
+                           <span id="io_wlan0_packets_sent.v" class='invisible'>
+                           <code>io_wlan0_packets_sent: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>Packets sent on the <code>wlan0</code> interface [#]</p>
+</div><span id="structfield.io_wlan0_packets_recv" class="structfield small-section-header">
+                           <a href="#structfield.io_wlan0_packets_recv" class="anchor field"></a>
+                           <span id="io_wlan0_packets_recv.v" class='invisible'>
+                           <code>io_wlan0_packets_recv: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>Packets recieved on the <code>wlan0</code> interface [#]</p>
+</div><span id="structfield.core_temp" class="structfield small-section-header">
+                           <a href="#structfield.core_temp" class="anchor field"></a>
+                           <span id="core_temp.v" class='invisible'>
+                           <code>core_temp: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code>
+                           </span></span><div class='docblock'><p>Temperature of the processor [°C]</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../../../psas_telemetry/messages/fcfh/struct.FCFH.html" title="struct psas_telemetry::messages::fcfh::FCFH">FCFH</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/psas_telemetry/messages/fcfh.rs.html#150-253' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from_raw' class="method"><span id='from_raw.v' class='invisible'><code>pub fn <a href='#method.from_raw' class='fnname'>from_raw</a>(raw: <a class="struct" href="../../../psas_telemetry/messages/fcfh/struct.FCFH_raw.html" title="struct psas_telemetry::messages::fcfh::FCFH_raw">FCFH_raw</a>) -&gt; <a class="struct" href="../../../psas_telemetry/messages/fcfh/struct.FCFH.html" title="struct psas_telemetry::messages::fcfh::FCFH">FCFH</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/psas_telemetry/messages/fcfh.rs.html#153-182' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Convert a FCFH_raw struct to a converted units struct by applying scaleing</p>
+</div><h4 id='method.to_csv_line' class="method"><span id='to_csv_line.v' class='invisible'><code>pub fn <a href='#method.to_csv_line' class='fnname'>to_csv_line</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/psas_telemetry/messages/fcfh.rs.html#186-217' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Convert values to a single line suitable for a CSV file
+(ex: &quot;12.0,-15.2,1352.8123,&quot;)</p>
+</div><h4 id='method.to_dict' class="method"><span id='to_dict.v' class='invisible'><code>pub fn <a href='#method.to_dict' class='fnname'>to_dict</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/std/collections/hash/map/struct.HashMap.html" title="struct std::collections::hash::map::HashMap">HashMap</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/psas_telemetry/messages/fcfh.rs.html#221-252' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>convert values to a dictionary where the key is a string
+(ex: {&#39;value_1&#39;: 12.0, &#39;value_2&#39;: -15.2})</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "psas_telemetry";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

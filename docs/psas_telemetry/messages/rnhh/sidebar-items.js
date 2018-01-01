@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["read_raw","Read the body and return unpacked struct of raw values"]],"struct":[["RNHH","Rocket Net Hub hardware Health"],["RNHH_raw","Rocket Net Hub hardware Health"]]});

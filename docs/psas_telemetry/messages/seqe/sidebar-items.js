@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["read_raw","Read the body and return unpacked struct of raw values"]],"struct":[["SEQE","Error message from the flight computer if it receives and out-of-order packet"],["SEQE_raw","Error message from the flight computer if it receives and out-of-order packet"]]});

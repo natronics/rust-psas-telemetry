@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["ADIS","Raw data from the Analog Devices `ADIS16405` 9DOF IMU"],["ADIS_raw","Raw data from the Analog Devices `ADIS16405` 9DOF IMU"]]});
+initSidebarItems({"fn":[["read_raw","Read the body and return unpacked struct of raw values"]],"struct":[["ADIS","Raw data from the Analog Devices `ADIS16405` 9DOF IMU"],["ADIS_raw","Raw data from the Analog Devices `ADIS16405` 9DOF IMU"]]});

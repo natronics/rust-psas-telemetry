@@ -29,7 +29,7 @@
 
     <nav class="sidebar">
         
-        <p class='location'>Module messages</p><div class="block items"><ul><li><a href="#modules">Modules</a></li></ul></div><p class='location'><a href='../index.html'>psas_telemetry</a></p><script>window.sidebarCurrent = {name: 'messages', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+        <p class='location'>Module messages</p><div class="block items"><ul><li><a href="#modules">Modules</a></li><li><a href="#functions">Functions</a></li></ul></div><p class='location'><a href='../index.html'>psas_telemetry</a></p><script>window.sidebarCurrent = {name: 'messages', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
     </nav>
 
     <nav class="sub">
@@ -48,14 +48,85 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a class='srclink' href='../../src/psas_telemetry/messages/mod.rs.html#2' title='goto source code'>[src]</a></span></h1>
+               </span><a class='srclink' href='../../src/psas_telemetry/messages/mod.rs.html#2-123' title='goto source code'>[src]</a></span></h1>
 <h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
 <table>
                        <tr class=' module-item'>
                            <td><a class="mod" href="adis/index.html"
                                   title='mod psas_telemetry::messages::adis'>adis</a></td>
                            <td class='docblock-short'>
-                                
+                                <p>Module for the ADIS16405 IMU telemetry messages.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="bmp1/index.html"
+                                  title='mod psas_telemetry::messages::bmp1'>bmp1</a></td>
+                           <td class='docblock-short'>
+                                <p>Module for the BMP180 Pressure sensor telemetry messages.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="fcfh/index.html"
+                                  title='mod psas_telemetry::messages::fcfh'>fcfh</a></td>
+                           <td class='docblock-short'>
+                                <p>Module for the FC Health telemetry messages.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="rnhh/index.html"
+                                  title='mod psas_telemetry::messages::rnhh'>rnhh</a></td>
+                           <td class='docblock-short'>
+                                <p>Module for the RNH Health telemetry messages.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="rnhp/index.html"
+                                  title='mod psas_telemetry::messages::rnhp'>rnhp</a></td>
+                           <td class='docblock-short'>
+                                <p>Module for the Rocket Net Hub Power telemetry messages.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="rnhu/index.html"
+                                  title='mod psas_telemetry::messages::rnhu'>rnhu</a></td>
+                           <td class='docblock-short'>
+                                <p>Module for the Umbilical Detect telemetry messages.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="roll/index.html"
+                                  title='mod psas_telemetry::messages::roll'>roll</a></td>
+                           <td class='docblock-short'>
+                                <p>Module for the Roll Servo Commands telemetry messages.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="seqe/index.html"
+                                  title='mod psas_telemetry::messages::seqe'>seqe</a></td>
+                           <td class='docblock-short'>
+                                <p>Module for the Sequence Number Error telemetry messages.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="v8a8/index.html"
+                                  title='mod psas_telemetry::messages::v8a8'>v8a8</a></td>
+                           <td class='docblock-short'>
+                                <p>Module for the Venus8 Navigation Message telemetry messages.</p>
+                           </td>
+                       </tr></table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.to_csv.html"
+                                  title='fn psas_telemetry::messages::to_csv'>to_csv</a></td>
+                           <td class='docblock-short'>
+                                <p>Attempt to read Message body based on it&#39;s fourcc and convert to a CSV line of scaled, unit-converted values</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.to_values.html"
+                                  title='fn psas_telemetry::messages::to_values'>to_values</a></td>
+                           <td class='docblock-short'>
+                                <p>Attempt to read Message body based on it&#39;s fourcc and convert to a map of scaled, unit-converted values</p>
                            </td>
                        </tr></table></section>
     <section id='search' class="content hidden"></section>

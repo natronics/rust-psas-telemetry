@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="rustdoc">
-    <meta name="description" content="API documentation for the Rust `adis` mod in crate `psas_telemetry`.">
-    <meta name="keywords" content="rust, rustlang, rust-lang, adis">
+    <meta name="description" content="API documentation for the Rust `BMP1_raw` struct in crate `psas_telemetry`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, BMP1_raw">
 
-    <title>psas_telemetry::messages::adis - Rust</title>
+    <title>psas_telemetry::messages::bmp1::BMP1_raw - Rust</title>
 
     <link rel="stylesheet" type="text/css" href="../../../normalize.css">
     <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
@@ -17,7 +17,7 @@
     
     
 </head>
-<body class="rustdoc mod">
+<body class="rustdoc struct">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -29,7 +29,7 @@
 
     <nav class="sidebar">
         
-        <p class='location'>Module adis</p><div class="block items"><ul><li><a href="#structs">Structs</a></li><li><a href="#functions">Functions</a></li></ul></div><p class='location'><a href='../../index.html'>psas_telemetry</a>::<wbr><a href='../index.html'>messages</a></p><script>window.sidebarCurrent = {name: 'adis', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+        <p class='location'>Struct BMP1_raw</p><div class="block items"><ul><li><a href="#fields">Fields</a></li></ul></div><p class='location'><a href='../../index.html'>psas_telemetry</a>::<wbr><a href='../index.html'>messages</a>::<wbr><a href='index.html'>bmp1</a></p><script>window.sidebarCurrent = {name: 'BMP1_raw', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
     </nav>
 
     <nav class="sub">
@@ -44,36 +44,27 @@
     </nav>
 
     <section id='main' class="content">
-<h1 class='fqn'><span class='in-band'>Module <a href='../../index.html'>psas_telemetry</a>::<wbr><a href='../index.html'>messages</a>::<wbr><a class="mod" href=''>adis</a></span><span class='out-of-band'><span id='render-detail'>
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>psas_telemetry</a>::<wbr><a href='../index.html'>messages</a>::<wbr><a href='index.html'>bmp1</a>::<wbr><a class="struct" href=''>BMP1_raw</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a class='srclink' href='../../../src/psas_telemetry/messages/adis.rs.html#2-162' title='goto source code'>[src]</a></span></h1>
-<div class='docblock'><p>Module for the ADIS16405 IMU telemetry messages.</p>
-</div><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
-<table>
-                       <tr class=' module-item'>
-                           <td><a class="struct" href="struct.ADIS.html"
-                                  title='struct psas_telemetry::messages::adis::ADIS'>ADIS</a></td>
-                           <td class='docblock-short'>
-                                <p>Raw data from the Analog Devices <code>ADIS16405</code> 9DOF IMU</p>
-                           </td>
-                       </tr>
-                       <tr class=' module-item'>
-                           <td><a class="struct" href="struct.ADIS_raw.html"
-                                  title='struct psas_telemetry::messages::adis::ADIS_raw'>ADIS_raw</a></td>
-                           <td class='docblock-short'>
-                                <p>Raw data from the Analog Devices <code>ADIS16405</code> 9DOF IMU</p>
-                           </td>
-                       </tr></table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
-<table>
-                       <tr class=' module-item'>
-                           <td><a class="fn" href="fn.read_raw.html"
-                                  title='fn psas_telemetry::messages::adis::read_raw'>read_raw</a></td>
-                           <td class='docblock-short'>
-                                <p>Read the body and return unpacked struct of raw values</p>
-                           </td>
-                       </tr></table></section>
+               </span><a class='srclink' href='../../../src/psas_telemetry/messages/bmp1.rs.html#12-18' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct BMP1_raw {
+    pub pressure: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pub temperature: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>,
+}</pre><div class='docblock'><p>Raw data from BMP180</p>
+</div><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.pressure" class="structfield small-section-header">
+                           <a href="#structfield.pressure" class="anchor field"></a>
+                           <span id="pressure.v" class='invisible'>
+                           <code>pressure: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code>
+                           </span></span><div class='docblock'><p>Pressure data</p>
+</div><span id="structfield.temperature" class="structfield small-section-header">
+                           <a href="#structfield.temperature" class="anchor field"></a>
+                           <span id="temperature.v" class='invisible'>
+                           <code>temperature: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code>
+                           </span></span><div class='docblock'><p>Temperature data</p>
+</div></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
