@@ -27,3 +27,29 @@ Each message is defined in a single [TOML](https://github.com/toml-lang/toml) fi
 The `build.rs` file reads in the definitions, parses the TOML, then sends that information to the template files in order to build to source code.
 
 This will build all of the files under `src/messages`.
+
+
+## Utilities
+
+There are also some helpful logfile utilities provided.
+
+### Logfile Stats
+
+Read a logfile and report its statistics (size, message counts, etc.)
+
+    $ cargo run --bin psas_logfile_stats FILE_TO_READ
+
+for example:
+
+    $ cargo run --bin psas_logfile_stats testdata/launch-12_short.log
+    > Number of sequence numbers in file: 191
+    > First sequence number: 0
+    > Last sequence number: 190
+    > Number of bytes read: 249997
+    > Number of messages (excluding SEQN): 8755
+    > Message counts:
+    >  - FCFH: 16
+    >  - VERS: 1
+    >  - SEQE: 3
+    >  - RNHH: 9
+    >  - RNHP: 8726
