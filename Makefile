@@ -3,6 +3,9 @@ build:
 	rm -f src/messages/*.rs
 	cargo build
 
+test:
+	cargo test
+
 update_docs:
 	rm -rf docs
 	cargo doc --no-deps
@@ -14,4 +17,4 @@ clean:
 	rm -f src/messages/*.rs
 	rm -rf docs
 
-.PHONY: build update_docs clean
+.PHONY: build update_docs clean test
