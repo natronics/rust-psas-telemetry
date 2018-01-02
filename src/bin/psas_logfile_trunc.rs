@@ -20,14 +20,14 @@ fn main() {
                           .arg(Arg::with_name("begin-seqn")
                                .short("s")
                                .long("begin-seqn")
-                               .value_name("SEQN_F")
-                               .help("First sequence number to include in output (don't include to start from the beginning)")
+                               .value_name("SEQN_I")
+                               .help("First sequence number to include in output (if not set, start from the beginning)")
                                .takes_value(true))
                           .arg(Arg::with_name("end-seqn")
-                               .short("f")
+                               .short("e")
                                .long("end-seqn")
                                .value_name("SEQN_F")
-                               .help("Last sequence number to include in output (don't include to read until end)")
+                               .help("Last sequence number to include in output (if not set, read until end of file)")
                                .takes_value(true))
                           .arg(Arg::with_name("keep-mesg")
                                .short("k")
@@ -49,6 +49,26 @@ fn main() {
                                .help("What file to write output to")
                                .required(true)
                                .index(2))
+                          .after_help("EXAMPLES:
+
+    Copy all of the contents of 'input_file.log' to 'output_file.log' up until the first read error:
+        $ psas_logfile_trunc input_file.log output_file.log
+
+    Truncate 'input_file.log' from SEQN 23 to the end of the file:
+        $ psas_logfile_trunc --begin-seqn=23 input_file.log output_file.log
+
+    Truncate 'input_file.log' from SEQN 23 to SEQN 101:
+        $ psas_logfile_trunc --begin-seqn=23 --end-seqn=101 input_file.log output_file.log
+
+    Copy only the message type 'ADIS' from 'input_file.log' to 'output_file.log'
+        $ psas_logfile_trunc --keep-mesg=ADIS input_file.log output_file.log
+
+    Copy only the message types 'ADIS', 'RNHH', and 'FCFH' from 'input_file.log' to 'output_file.log'
+        $ psas_logfile_trunc --keep-mesg=ADIS,RNHH,FCFH input_file.log output_file.log
+
+    Copy only the message types 'ADIS', 'RNHH', and 'FCFH' between SEQN 23 and 100:
+        $ psas_logfile_trunc --begin-seqn=23 --end-seqn=101 --keep-mesg=ADIS,RNHH,FCFH input_file.log output_file.log
+")
                           .get_matches();
 
     // Set up from args:
@@ -78,10 +98,14 @@ fn main() {
 
     // What messages we're keeping
     let keep_mesg_raw = matches.value_of("keep-mesg").unwrap_or("");
-    let keep_mesgs = keep_mesg_raw.split(",");
+    let keep_mesgs_list = keep_mesg_raw.split(",");
+    let mut keep_mesgs = Vec::new();
     eprintln!("Keep messages:");
-    for mesg in keep_mesgs {
-        eprintln!("  - {}", mesg);
+    for mesg in keep_mesgs_list {
+        if mesg.len() > 0 {
+            keep_mesgs.push(mesg);
+            eprintln!("  - {}", mesg);
+        }
     }
 
 
@@ -97,5 +121,5 @@ fn main() {
     let mut write_buffer = BufWriter::new(file);
 
     // Use `trunc_sequence`
-    psas_telemetry::trunc_sequence(input_path, seqn_i, seqn_f, &mut write_buffer);
+    psas_telemetry::trunc_sequence(input_path, seqn_i, seqn_f, keep_mesgs, &mut write_buffer);
 }
