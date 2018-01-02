@@ -6,7 +6,6 @@ pub mod {{ definition.fourcc | lower }};
 use std::collections::HashMap;
 use std::io::prelude::*;
 use std::io::Error;
-use std::fs::File;
 use std::io::BufReader;
 use std::io::Cursor;
 
@@ -14,6 +13,8 @@ use byteorder::{ReadBytesExt, BigEndian};
 
 
 // The `SEQN` header is part of the spec, and not defined with the TOML files.
+
+pub const SIZE_OF_HEADER: usize = 4 + 6 + 2;
 
 /// A message header
 pub struct Header {
@@ -30,7 +31,7 @@ pub struct Header {
 
 /// Read from a buffer assuming were at the boundary of a message.
 /// Extracts the header
-pub fn read_header(reader: &mut BufReader<File>) -> Result<Header, Error> {
+pub fn read_header<I>(reader: &mut BufReader<I>) -> Result<Header, Error> where I: Read  {
     let mut fourcc_buf = [0; 4];
     let mut header_buf = [0; 8];
 
@@ -51,8 +52,8 @@ pub fn read_header(reader: &mut BufReader<File>) -> Result<Header, Error> {
     })
 }
 
-pub fn read_seqn_body(body: Vec<u8>) -> u32 {
-    let mut body = Cursor::new(&body);
+pub fn read_seqn_body(body: &Vec<u8>) -> u32 {
+    let mut body = Cursor::new(body);
     body.read_u32::<BigEndian>().unwrap()
 }
 

@@ -9,6 +9,7 @@ publish = false  # For now
 
 [dependencies]
 byteorder = "1.2.1"
+clap = "2.29.0"
 
 
 [build-dependencies]
