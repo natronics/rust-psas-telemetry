@@ -110,10 +110,12 @@ pub fn get_stats(filename: String) -> Stats {
 
 
 /// Given a logfile and a message type (four character code), write a CSV file
-pub fn serialize_message_to_csv<I>(input_filename: String, fourcc_to_match: &[u8; 4], writer: &mut BufWriter<I>) where I: Write {
+pub fn serialize_message_to_csv<I>(input_filename: &Path, fourcc_to_match: &[u8; 4], writer: &mut BufWriter<I>) where I: Write {
     // Read our file
     let fh = File::open(&input_filename).unwrap();
     let mut reader = BufReader::new(fh);
+
+    let mut current_seqn = 0;
 
     loop {
         let header = match messages::read_header(&mut reader) {
@@ -126,11 +128,16 @@ pub fn serialize_message_to_csv<I>(input_filename: String, fourcc_to_match: &[u8
             Err(_) => break,
         };
 
+        // Keep track of the sequence number
+        if &header.fourcc == b"SEQN" {
+            current_seqn = messages::read_seqn_body(&body_buf);
+        }
+
         if header.fourcc == *fourcc_to_match {
             // We match all in read_all, but because we're already filtering
             // we'll only get back the data we want
             match messages::to_csv(header.fourcc, body_buf) {
-                Some(line) => write!(writer, "{},{}\n", header.timestamp, line).unwrap(),
+                Some(line) => write!(writer, "{},{},{}\n", current_seqn, header.timestamp, line).unwrap(),
                 None => {},
             };
         }
@@ -248,8 +255,9 @@ mod tests {
 
         let mem: Vec<u8> = Vec::new();
         let mut write_buffer = BufWriter::new(mem);
+        let input_path = Path::new("testdata/launch-12_short.log");
 
-        serialize_message_to_csv("testdata/launch-12_short.log".to_owned(), b"RNHP", &mut write_buffer);
+        serialize_message_to_csv(input_path, b"RNHP", &mut write_buffer);
 
         // This is our "file" in memory
         let mem = write_buffer.into_inner().unwrap();
