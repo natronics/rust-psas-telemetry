@@ -6,6 +6,8 @@ use std::io::Cursor;
 #[allow(unused_imports)]
 use byteorder::{ReadBytesExt, WriteBytesExt, BigEndian};
 use std::collections::HashMap;
+use std::mem::size_of;
+use super::Header;
 
 
 /// {{ description }}
@@ -84,6 +86,20 @@ impl {{ fourcc }} {
         {% endif %}
         {% endfor %}
     }
+
+    pub fn write_message(&self, buffer: &mut Vec<u8>, timestamp: u64) {
+        // Write header:
+        let header = Header {
+            fourcc: *b"{{ fourcc }}",
+            timestamp: timestamp,
+            size: size_of::<{{ fourcc }}_raw>(),
+        };
+        header.write(buffer);
+
+        // Write body:
+        self.write_raw_bytes(buffer);
+    }
+
 }
 
 

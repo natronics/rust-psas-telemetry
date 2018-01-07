@@ -225,6 +225,7 @@ mod tests {
     use super::*;
     use byteorder::{ReadBytesExt, BigEndian};
     use std::io::BufReader;
+    use std::mem::size_of;
 
     #[test]
     fn get_file_stats_from_l12_short() {
@@ -348,5 +349,59 @@ mod tests {
         assert_eq!(&header.fourcc, b"MESG");
         assert_eq!(header.timestamp, 123);
         assert_eq!(header.size, 10);
+    }
+
+
+    #[test]
+    fn write_a_message() {
+        // Test data. In MKS units
+        let adis = messages::adis::ADIS {
+            vcc: 5.0,
+            acc_x: 9.999,
+            acc_y: 0.0,
+            acc_z: 0.0,
+            gyro_x: 1.0,
+            gyro_y: -100.0,
+            gyro_z: 345.5,
+            magn_x: 25e-6,
+            magn_y: 0.1e-6,
+            magn_z: -10e-6,
+            temp: 24.0,
+            aux_adc: 2.2345,
+        };
+
+        // Write (time = 0)
+        let mut buffer = vec![];
+        adis.write_message(&mut buffer, 0);
+
+        // Look for ASCII fourcc
+        assert_eq!(buffer[0], 65);  // "A"
+        assert_eq!(buffer[1], 68);  // "D"
+        assert_eq!(buffer[2], 73);  // "I"
+        assert_eq!(buffer[3], 83);  // "S"
+
+        // Read back in round trip
+        let mut rdr = BufReader::new(&*buffer);
+        let new_header = messages::read_header(&mut rdr).unwrap();
+        assert_eq!(&new_header.fourcc, b"ADIS");
+        assert_eq!(new_header.timestamp, 0);
+        assert_eq!(new_header.size, size_of::<messages::adis::ADIS_raw>());
+
+        let mut body_buf = vec![0u8; new_header.size];
+        rdr.read_exact(&mut body_buf).unwrap();
+        let rebuilt = messages::adis::read_raw(body_buf);
+        assert_eq!(rebuilt.vcc, 2067);
+        assert_eq!(rebuilt.gyro_x, 20);
+        assert_eq!(rebuilt.gyro_y, -2000);
+        assert_eq!(rebuilt.gyro_z, 6910);
+        assert_eq!(rebuilt.acc_x, 3002);
+        assert_eq!(rebuilt.acc_y, 0);
+        assert_eq!(rebuilt.acc_z, 0);
+        assert_eq!(rebuilt.magn_x, 500);
+        assert_eq!(rebuilt.magn_y, 2);
+        assert_eq!(rebuilt.magn_z, -200);
+        assert_eq!(rebuilt.temp, 171);
+        assert_eq!(rebuilt.aux_adc, 1801);
+
     }
 }
