@@ -224,7 +224,7 @@ pub fn trunc_sequence<I>(input_filename: &Path, seqn_i: i64, seqn_f: i64, keepli
 mod tests {
     use super::*;
     use byteorder::{ReadBytesExt, BigEndian};
-
+    use std::io::BufReader;
 
     #[test]
     fn get_file_stats_from_l12_short() {
@@ -322,5 +322,31 @@ mod tests {
         assert_eq!(rebuilt.magn_z, -200);
         assert_eq!(rebuilt.temp, 171);
         assert_eq!(rebuilt.aux_adc, 1801);
+    }
+
+
+    #[test]
+    fn write_a_message_header() {
+        // Write data into binary form
+        let mut buffer: Vec<u8> = Vec::new();
+        let header = messages::Header {
+            fourcc: *b"MESG",
+            timestamp: 123,
+            size: 10,
+        };
+        header.write(&mut buffer);
+
+        // Look for ASCII fourcc
+        assert_eq!(buffer[0], 77);  // "M"
+        assert_eq!(buffer[1], 69);  // "E"
+        assert_eq!(buffer[2], 83);  // "S"
+        assert_eq!(buffer[3], 71);  // "G"
+
+        // Read back in round trip
+        let mut rdr = BufReader::new(&*buffer);
+        let header = messages::read_header(&mut rdr).unwrap();
+        assert_eq!(&header.fourcc, b"MESG");
+        assert_eq!(header.timestamp, 123);
+        assert_eq!(header.size, 10);
     }
 }

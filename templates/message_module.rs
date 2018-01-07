@@ -9,11 +9,10 @@ use std::io::Error;
 use std::io::BufReader;
 use std::io::Cursor;
 
-use byteorder::{ReadBytesExt, BigEndian};
+use byteorder::{ReadBytesExt, WriteBytesExt, BigEndian};
 
 
 // The `SEQN` header is part of the spec, and not defined with the TOML files.
-
 pub const SIZE_OF_HEADER: usize = 4 + 6 + 2;
 
 /// A message header
@@ -26,6 +25,25 @@ pub struct Header {
 
     /// The size of the upcoming message body, in bytes
     pub size: usize,
+}
+
+
+impl Header {
+
+    /// Write a message header to a buffer.
+    pub fn write(&self, buffer: &mut Vec<u8>) {
+
+        // Four character code
+        buffer.write(&self.fourcc).unwrap();
+
+        // Time, truncated to 6 bytes
+        let mut time_buffer = vec![];
+        time_buffer.write_u64::<BigEndian>(self.timestamp).unwrap();
+        buffer.write(&time_buffer[2..8]).unwrap();
+
+        // Size
+        buffer.write_u16::<BigEndian>(self.size as u16).unwrap();
+    }
 }
 
 
@@ -51,6 +69,7 @@ pub fn read_header<I>(reader: &mut BufReader<I>) -> Result<Header, Error> where 
         size: message_length,
     })
 }
+
 
 pub fn read_seqn_body(body: &Vec<u8>) -> u32 {
     let mut body = Cursor::new(body);
