@@ -110,4 +110,4 @@ description = "Aux ADC value"
 type = "i16"
   [member.units]
     mks = "volt"
-    scaleby = "806.0"
+    scaleby = "(1.0 / 806.0)"
