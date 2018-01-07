@@ -223,6 +223,8 @@ pub fn trunc_sequence<I>(input_filename: &Path, seqn_i: i64, seqn_f: i64, keepli
 #[cfg(test)]
 mod tests {
     use super::*;
+    use byteorder::{ReadBytesExt, BigEndian};
+
 
     #[test]
     fn get_file_stats_from_l12_short() {
@@ -268,5 +270,57 @@ mod tests {
             linecount += 1;
         }
         assert_eq!(linecount, 8727);
+    }
+
+    #[test]
+    fn write_a_message_body() {
+        // Test data. In MKS units
+        let adis = messages::adis::ADIS {
+            vcc: 5.0,
+            acc_x: 9.999,
+            acc_y: 0.0,
+            acc_z: 0.0,
+            gyro_x: 1.0,
+            gyro_y: -100.0,
+            gyro_z: 345.5,
+            magn_x: 25e-6,
+            magn_y: 0.1e-6,
+            magn_z: -10e-6,
+            temp: 24.0,
+            aux_adc: 2.2345,
+        };
+
+        // Write data into binary form
+        let mut buffer = vec![];
+        adis.write_raw_bytes(&mut buffer);
+
+        // Read it back out
+        let mut cursor = Cursor::new(&*buffer);
+        let rebuilt = messages::adis::ADIS_raw {
+            vcc: cursor.read_u16::<BigEndian>().unwrap(),
+            gyro_x: cursor.read_i16::<BigEndian>().unwrap(),
+            gyro_y: cursor.read_i16::<BigEndian>().unwrap(),
+            gyro_z: cursor.read_i16::<BigEndian>().unwrap(),
+            acc_x: cursor.read_i16::<BigEndian>().unwrap(),
+            acc_y: cursor.read_i16::<BigEndian>().unwrap(),
+            acc_z: cursor.read_i16::<BigEndian>().unwrap(),
+            magn_x: cursor.read_i16::<BigEndian>().unwrap(),
+            magn_y: cursor.read_i16::<BigEndian>().unwrap(),
+            magn_z: cursor.read_i16::<BigEndian>().unwrap(),
+            temp: cursor.read_i16::<BigEndian>().unwrap(),
+            aux_adc: cursor.read_i16::<BigEndian>().unwrap(),
+        };
+        assert_eq!(rebuilt.vcc, 2067);
+        assert_eq!(rebuilt.gyro_x, 20);
+        assert_eq!(rebuilt.gyro_y, -2000);
+        assert_eq!(rebuilt.gyro_z, 6910);
+        assert_eq!(rebuilt.acc_x, 3002);
+        assert_eq!(rebuilt.acc_y, 0);
+        assert_eq!(rebuilt.acc_z, 0);
+        assert_eq!(rebuilt.magn_x, 500);
+        assert_eq!(rebuilt.magn_y, 2);
+        assert_eq!(rebuilt.magn_z, -200);
+        assert_eq!(rebuilt.temp, 171);
+        assert_eq!(rebuilt.aux_adc, 1801);
     }
 }

@@ -4,7 +4,7 @@ Module for the {{ name }} telemetry messages.
 */
 use std::io::Cursor;
 #[allow(unused_imports)]
-use byteorder::{ReadBytesExt, BigEndian};
+use byteorder::{ReadBytesExt, WriteBytesExt, BigEndian};
 use std::collections::HashMap;
 
 
@@ -27,6 +27,17 @@ pub struct {{ fourcc }} {
     {% endfor %}
 }
 
+
+impl {{ fourcc }}_raw {
+    /// Convert a {{ fourcc }} struct with converted units to a raw struct by applying scaleing backwards
+    pub fn from_processed(processed: &{{ fourcc }}) -> {{ fourcc }}_raw {
+        {{ fourcc }}_raw {
+            {% for field in member %}
+                {{ field.key | lower }}: (processed.{{ field.key | lower }} {% if field.units.scaleby %} / {{ field.units.scaleby }}{% endif %}) as {{ field.type }},
+            {% endfor %}
+        }
+    }
+}
 
 impl {{ fourcc }} {
 
@@ -61,6 +72,17 @@ impl {{ fourcc }} {
         {% endfor %}
 
         map
+    }
+
+    pub fn write_raw_bytes(&self, buffer: &mut Vec<u8>) {
+        let raw = {{ fourcc }}_raw::from_processed(self);
+        {% for field in member %}
+        {% if field.type == "u8" %}
+            buffer.write_{{ field.type }}(raw.{{ field.key | lower }}).unwrap();
+        {% else %}
+            buffer.write_{{ field.type }}::<BigEndian>(raw.{{ field.key | lower }}).unwrap();
+        {% endif %}
+        {% endfor %}
     }
 }
 
